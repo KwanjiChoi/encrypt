@@ -3,7 +3,7 @@ date = Time.now.strftime("%Y%m%d%H%M%S")
 begin
   file = open(ARGV[0])
 rescue
-  p 'Specify encript file'
+  p 'Specify encrypt file'
   exit
 end
 
