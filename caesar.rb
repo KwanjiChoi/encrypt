@@ -1,5 +1,5 @@
-require "date"
-date = Date.today.strftime("%Y%m%d")
+
+date = Time.now.strftime("%Y%m%d%H%M%S")
 
 file = open(ARGV[0])
 
