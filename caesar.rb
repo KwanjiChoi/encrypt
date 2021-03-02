@@ -1,7 +1,11 @@
-
 date = Time.now.strftime("%Y%m%d%H%M%S")
 
-file = open(ARGV[0])
+begin
+  file = open(ARGV[0])
+rescue
+  p 'Specify encript file'
+  exit
+end
 
 puts "暗号キーを入力してください(数字)"
 num = STDIN.gets.to_i
