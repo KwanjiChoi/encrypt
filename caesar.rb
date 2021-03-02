@@ -1,6 +1,11 @@
+require "date"
+date = Date.today.strftime("%Y%m%d")
+
 file = open(ARGV[0])
+
 puts "暗号キーを入力してください(数字)"
 num = STDIN.gets.to_i
+
 content = file.read
 
 def encryption(str, key)
@@ -14,4 +19,10 @@ end
 
 result = encryption(content, num)
 puts "暗号化後: #{result}"
+
+encrypted_file_name = "#{date}_encrypted_#{File.basename(file)}"
+
+open(encrypted_file_name, 'w'){|f|
+  f.puts result
+}
 
